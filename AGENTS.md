@@ -13,7 +13,7 @@ embedded-conventions holds the rules and the shared checks of the repos that syn
 
 1. Edit the originals here, and commit.
 2. Run `cargo xtask sync ../<repo>`. Sync copies from `HEAD`, refuses while the shared files have changes that are not committed, and installs the hooks from the shared `hooks` module.
-3. Commit the copy in each repo. The subject names the commit, such as "Sync the rule files and xtask/src/shared from embedded-conventions 1a2b3c4".
+3. Commit the copy in each repo. The subject names the commit, such as "Sync the shared files from embedded-conventions 1a2b3c4".
 
 ## The template
 
