@@ -13,6 +13,7 @@ This file is a copy from embedded-conventions. Edit it there, then run `cargo xt
 - Behaviour across components is tested in `tests/`. The real collaborators are wired together over in-memory fakes at the edge, such as a buffer for the network or a mock flash.
 - An internal helper that the integration tests exercise does not get its own test. A test tied to internal structure makes refactoring harder, and does not add coverage.
 - `REQUIREMENTS.md` states the property tests that every parser needs. Property tests elsewhere are encouraged, and not required.
+- A test that fails when a requirement is not met has an `@verify` comment that names its ID, such as `// @verify K-3`. A check that is not a test, such as a lint in `Cargo.toml`, has one beside it.
 
 ## Test first
 
