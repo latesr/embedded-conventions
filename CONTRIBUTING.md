@@ -27,13 +27,13 @@ Each kind of work has its own rule file. Read the file when the work starts. A f
 
 `REQUIREMENTS.md` states each requirement under an ID, such as `C-6`. The letter names the section. A new requirement takes the next free number for its letter. It sits beside the requirements it relates to, so the numbers can appear out of order. An ID is never reused.
 
-`REQUIREMENTS.md` reads as a specification that a test house could test against. One ID states one behaviour that a test or a recorded sample can fail on, in a sentence or two. It states what the crate guarantees, not the mechanism, a workaround, or a pinned version. When the reader would propose another behaviour, a `Rationale:` line under the requirement gives the reason and names that behaviour, in one or two sentences. A test does not check a `Rationale:` line. Any other reason goes in a comment at the code. A rule about how the code is written goes in an ADR, not in a requirement.
+`REQUIREMENTS.md` reads as a specification that a test house could test against. One ID states one behaviour that a test or a recorded sample can fail on, in a sentence or two. It states the behaviour in the simple present. It states what the crate guarantees, not the mechanism, a workaround, or a pinned version. When the reader would propose another behaviour, a `Rationale:` line under the requirement gives the reason and names that behaviour, in one or two sentences. A test does not check a `Rationale:` line. Any other reason goes in a comment at the code. A rule about how the code is written goes in an ADR, not in a requirement.
 
 `CHECKS.md` states how the IDs are checked, and how they are renumbered once before the first release.
 
 ## Writing style
 
-Everything written in the repo follows the writing rules of ASD-STE100 Simplified Technical English, without its dictionary. The reader is an engineer who is new to the repo and reads the page once. Use the simple present, the active voice, one topic per sentence, the same noun for the same thing, and `must` for a requirement. `WRITING.md` holds the full rules.
+Everything written in the repo follows the writing rules of ASD-STE100 Simplified Technical English, without its dictionary. The reader is an engineer who is new to the repo and reads the page once. Use the simple present, the active voice, one topic per sentence, the same noun for the same thing, and `must` for a rule. `WRITING.md` holds the full rules.
 
 ### Commit messages
 
