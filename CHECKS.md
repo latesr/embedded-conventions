@@ -1,6 +1,6 @@
 # Checks
 
-`cargo xtask check` runs the quick checks over what a change reaches, and the pre-commit hook runs it. `cargo xtask check --push` runs the quick and the slow checks over what the branch changed, and the pre-push hook runs it. `--full` runs every check on every crate, and CI runs it on every push and pull request. To save time while working, an agent runs the tests of the crate it changes with `cargo test -p <crate>`.
+`cargo xtask check` runs the quick checks over what a change reaches, and the pre-commit hook runs it. `cargo xtask check --push` runs the quick and the slow checks over what the branch changed, and the pre-push hook runs it. `--full` runs every check on every crate, and CI runs it on every push and pull request. To save time while working, an agent runs the tests of the crate it changes with `cargo test -p <crate>`. CI also runs the mutation check over what each push or pull request changes, and over every line each night that `main` has changed. Every line is also checked before each release.
 
 This file is a copy from embedded-conventions. Edit it there, then run `cargo xtask sync` in embedded-conventions.
 

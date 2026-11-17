@@ -32,25 +32,19 @@
 ## Constraints
 
 - The crates build on stable Rust. The minimum supported Rust version (MSRV) is 1.91, with edition 2024.
+- Every combination of a published crate's features builds.
 
 `EMBEDDED.md` names the lints that enforce the code constraints.
 
 ## Testing
 
-Development is test first. `TESTING.md` states how a developer writes and checks tests. This section states what the test suite must contain and what CI runs.
+Development is test first. `TESTING.md` states how a developer writes and checks tests. This section states what the test suite must contain.
 
 ### Unit and property tests
 
 ### Fuzzing
 
 ### Hardware tests
-
-### Continuous integration
-
-- CI runs `cargo xtask check` on every push. `CHECKS.md` and `AGENTS.md` list what it runs.
-- CI runs cargo-mutants over the changed lines on every push.
-- Each night, a full cargo-mutants run covers every crate if the latest commit on `main` has not passed one already. One also runs before each release.
-- The nightly job checks every feature combination of every published crate with `cargo hack`. `cargo xtask check` covers pairs of features.
 
 ## Licence
 

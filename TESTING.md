@@ -67,4 +67,4 @@ Exclude a mutant that times out only when the mutated line is the loop's only ex
 
 A change can make an unchanged line dead, for example by moving a decision it made elsewhere. When a commit changes what other lines in a file mean, run `cargo mutants -f <file> --all-features` on that file before committing, with the `--jobs` that `cargo xtask mutants` uses. A commit that only adds or edits lines with a meaning that stays in place needs only the hook's run.
 
-`REQUIREMENTS.md` states what CI runs.
+`CHECKS.md` and `AGENTS.md` state what CI runs.
