@@ -202,6 +202,7 @@ mod tests {
             .collect()
     }
 
+    // @verify S-1, S-4
     #[test]
     fn an_old_copy_is_brought_up_to_date() {
         let source = source("sync-old-copy");
@@ -240,6 +241,7 @@ mod tests {
         assert_eq!(sync_one(&source.0, &repo.0).unwrap(), Report::default());
     }
 
+    // @verify S-3, S-4
     #[test]
     fn a_copy_edited_in_place_is_reported_and_kept() {
         let source = source("sync-edited");
@@ -260,6 +262,7 @@ mod tests {
         );
     }
 
+    // @verify S-1, S-5
     #[test]
     fn a_repo_without_the_folder_gets_every_file() {
         let source = source("sync-empty");
@@ -298,6 +301,7 @@ mod tests {
         assert_eq!(installed.lines(), ["installed the git hooks"]);
     }
 
+    // @verify S-5
     #[test]
     fn the_git_hooks_are_installed_in_a_git_repository() {
         let source = source("sync-hooks");
@@ -316,6 +320,7 @@ mod tests {
         assert!(pre_commit.contains("cargo xtask check"), "{pre_commit}");
     }
 
+    // @verify S-2, S-3
     #[test]
     fn run_fails_on_uncommitted_source_changes_and_on_an_edited_copy() {
         let source = source("sync-run");
@@ -323,7 +328,10 @@ mod tests {
         let repos = [repo.0.clone()];
         repo.write("xtask/src/shared/a.rs", "a1 edited\n");
         let error = run(&source.0, &repos).unwrap_err();
-        assert!(error.contains("xtask/src/shared/a.rs"), "{error}");
+        assert!(
+            error.contains(&format!("{}: xtask/src/shared/a.rs", repo.0.display())),
+            "{error}"
+        );
         assert!(error.contains("to embedded-conventions"), "{error}");
         assert_eq!(
             read(&repo, "xtask/src/shared/new.rs").as_deref(),
@@ -345,6 +353,7 @@ mod tests {
         );
     }
 
+    // @verify S-1
     #[test]
     fn the_last_line_names_embedded_conventions_and_its_commit() {
         assert_eq!(
@@ -353,6 +362,7 @@ mod tests {
         );
     }
 
+    // @verify S-1, S-2, S-3
     #[test]
     fn the_rule_files_are_synced_to_the_repo_root() {
         let source = source("sync-conventions");
