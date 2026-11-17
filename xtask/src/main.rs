@@ -30,6 +30,9 @@ enum Command {
         /// The folders of the repos to copy into.
         #[arg(required = true)]
         repos: Vec<PathBuf>,
+        /// Replace each copy that was edited in place. Needs each repo's copies to have no uncommitted changes.
+        #[arg(long)]
+        overwrite: bool,
     },
 }
 
@@ -39,7 +42,7 @@ fn main() {
     let result = match cli.command {
         Command::Check { full } => check::run(&root, full),
         Command::Shared(command) => shared::run(&root, command),
-        Command::Sync { repos } => sync::run(&root, &repos),
+        Command::Sync { repos, overwrite } => sync::run(&root, &repos, overwrite),
     };
     if let Err(message) = result {
         eprintln!("{message}");

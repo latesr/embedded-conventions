@@ -23,8 +23,9 @@ Each requirement has an ID, such as S-3. Tests cite the ID. An ID is never reuse
 
 - **S-1** It copies each shared file from the `HEAD` of embedded-conventions, and prints that commit.
 - **S-2** It copies nothing while a shared file in embedded-conventions has changes that are not committed, and it fails.
-- **S-3** It leaves a copy that matches no committed version of its original, and fails, naming the repo and the file.
-- **S-4** It removes a file in a repo's `xtask/src/shared/` that is not in `HEAD` when the file matches a committed version, and reports it as edited in place when it does not.
+- **S-3** Without `--overwrite`, it leaves a copy that matches no committed version of its original, and fails, naming the repo and the file.
+- **S-4** It removes a file in a repo's `xtask/src/shared/` that is not in `HEAD` when the file matches a committed version. Without `--overwrite`, it reports such a file as edited in place when it does not.
+- **S-6** With `--overwrite`, it replaces each copy that matches no committed version, and removes each such file in `xtask/src/shared/` that is not in `HEAD`, naming each one. It first fails, copying nothing, when a named repo is not a git repository or its copies have changes that are not committed.
 - **S-5** It installs the git hooks in a repo that has a `.git/hooks` folder, and reports that it did not when the folder is missing.
 
 ## Constraints
