@@ -2,7 +2,7 @@
 
 These rules add to `CODE.md` and `TESTING.md` for every library crate that runs on a microcontroller. Host tools, `xtask`, and crates that build only with `std` do not follow them.
 
-This file is a copy from embedded-devkit. Edit it there, then run `cargo xtask sync` in the devkit.
+This file is a copy from embedded-conventions. Edit it there, then run `cargo xtask sync` in embedded-conventions.
 
 ## Embedded rules
 

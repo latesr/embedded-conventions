@@ -1,8 +1,8 @@
 # Writing
 
-These rules apply to everything written in a repo that syncs from embedded-devkit: ADRs, READMEs, `REQUIREMENTS.md`, rustdoc, code comments, and commit messages. Three files add rules for one kind of text: `CONTRIBUTING.md` for commit messages, `CODE.md` for rustdoc and code comments, and `DOCS.md` for ADRs.
+These rules apply to everything written in a repo that syncs from embedded-conventions: ADRs, READMEs, `REQUIREMENTS.md`, rustdoc, code comments, and commit messages. Three files add rules for one kind of text: `CONTRIBUTING.md` for commit messages, `CODE.md` for rustdoc and code comments, and `DOCS.md` for ADRs.
 
-This file is a copy from embedded-devkit. Edit it there, then run `cargo xtask sync` in the devkit.
+This file is a copy from embedded-conventions. Edit it there, then run `cargo xtask sync` in embedded-conventions.
 
 Write to the writing rules of ASD-STE100 Simplified Technical English, for an engineer who is new to the repo and reads the text once. Some readers speak English as a second language. The STE dictionary of approved words does not apply. Spelling is British. Personal communication is outside these rules.
 

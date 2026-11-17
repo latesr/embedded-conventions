@@ -1,4 +1,4 @@
-// A copy from embedded-devkit/xtask/src/shared. Edit it there, then run `cargo xtask sync` in the devkit.
+// A copy from embedded-conventions/xtask/src/shared. Edit it there, then run `cargo xtask sync` there.
 
 //! Renumbers the requirement IDs, so each letter's IDs count up from 1 in the order `REQUIREMENTS.md` defines
 //! them. Every definition and citation that the ID check reads changes in one pass.

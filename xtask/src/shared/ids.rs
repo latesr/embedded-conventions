@@ -1,4 +1,4 @@
-// A copy from embedded-devkit/xtask/src/shared. Edit it there, then run `cargo xtask sync` in the devkit.
+// A copy from embedded-conventions/xtask/src/shared. Edit it there, then run `cargo xtask sync` there.
 
 //! Checks that every requirement ID the repo cites is defined in `REQUIREMENTS.md`, and defined once.
 //!
@@ -14,10 +14,10 @@
 //! comment names each ID singly, so `C-1 to C-3` names C-1 and C-3 only. Once a repo's list is empty, its
 //! `check.rs` fails the check when an ID joins the list.
 //!
-//! The copies from the devkit, the rule files and `xtask/src/shared/`, are not read. Their example IDs cite no
-//! repo's requirements, and a renumber must not edit a copy in place. The devkit holds the originals, so they must
-//! not cite a devkit requirement either: the check would not see the citation, and a sync would copy it to every
-//! repo.
+//! The copies from embedded-conventions, the rule files and `xtask/src/shared/`, are not read. Their example IDs
+//! cite no repo's requirements, and a renumber must not edit a copy in place. embedded-conventions holds the
+//! originals, so they must not cite its requirements either: the check would not see the citation, and a sync would
+//! copy it to every repo.
 //!
 //! A renumber rewrites an ID in a heading, and not the anchors that link to the heading. The links check then
 //! reports each broken anchor.
@@ -221,7 +221,7 @@ fn hash_citations(text: &str, letters: &BTreeSet<String>) -> Vec<Citation> {
     found
 }
 
-/// Whether the file at `path`, relative to the repo root, is a copy from the devkit.
+/// Whether the file at `path`, relative to the repo root, is a copy from embedded-conventions.
 fn is_synced(path: &Path) -> bool {
     RULE_FILES.iter().any(|file| path == Path::new(file)) || path.starts_with("xtask/src/shared")
 }

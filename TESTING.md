@@ -1,8 +1,8 @@
 # Testing
 
-These rules apply to every crate in a repo that syncs from embedded-devkit. `EMBEDDED.md` adds the rules for tests in a `no_std` crate.
+These rules apply to every crate in a repo that syncs from embedded-conventions. `EMBEDDED.md` adds the rules for tests in a `no_std` crate.
 
-This file is a copy from embedded-devkit. Edit it there, then run `cargo xtask sync` in the devkit.
+This file is a copy from embedded-conventions. Edit it there, then run `cargo xtask sync` in embedded-conventions.
 
 ## Where a test goes
 

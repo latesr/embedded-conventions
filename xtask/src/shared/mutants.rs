@@ -1,4 +1,4 @@
-// A copy from embedded-devkit/xtask/src/shared. Edit it there, then run `cargo xtask sync` in the devkit.
+// A copy from embedded-conventions/xtask/src/shared. Edit it there, then run `cargo xtask sync` there.
 
 //! Runs cargo-mutants over the staged lines, over the lines that differ from a base commit, or over every line.
 
