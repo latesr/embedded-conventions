@@ -9,7 +9,8 @@ Each requirement has an ID, such as S-3. Tests cite the ID. An ID is never reuse
 ## Terms
 
 - **Shared files.** `CONVENTIONS.md`, `CONTRIBUTING.md`, the rule files that `CONTRIBUTING.md` indexes, and the files in `xtask/src/shared/`.
-- **Copy.** A shared file in another repo, at the same path.
+- **Synced repo.** A repo that holds copies of the shared files.
+- **Copy.** A shared file in a synced repo, at the same path.
 
 ## Crates
 
